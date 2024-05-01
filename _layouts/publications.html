@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{% assign publications = site.publications | sort: 'date' | reverse %}
+{% for publication in publications %}
+<article>
+  <h2><a href="{{ publication.url | relative_url }}">{{ publication.title | escape }}</a></h2>
+  <p>发表时间：{{ publication.date | date: "%Y-%m-%d" }}</p>
+  <p>{{ publication.content | strip_html | truncatewords: 50 }}</p>
+</article>
+{% endfor %}

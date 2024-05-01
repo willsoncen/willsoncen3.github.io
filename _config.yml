@@ -57,3 +57,8 @@ author:
   name: Songzi Vong
   url: https://github.com/vszhub/
   email: vszhub@gmail.com
+
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
