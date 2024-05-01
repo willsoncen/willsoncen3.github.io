@@ -1,0 +1,132 @@
+// Publications and pages
+//
+// Each publication is wrapped in .publication and is used on default and publications layouts. Each
+// page is wrapped in .page and is only used on the page layout.
+
+.publication-entry {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--spacer-3);
+}
+
+.page,
+.publication {
+  font-family: var(--text-font);
+  margin-bottom: 4em;
+
+  h1, h2, h3, h4, h5, h6, .publication-meta {
+    font-family: var(--body-font);
+  }
+
+  li + li {
+    margin-top: .25rem;
+  }
+}
+
+// Blog publication or page title
+.page-title,
+.publication-title {
+  color: var(--heading-color);
+}
+.page-title,
+.publication-title {
+  margin-top: 0;
+}
+.publication-title a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+// Meta data line below publication title
+.publication-meta {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: var(--spacer);
+  color: var(--gray-600);
+}
+
+.comment-count {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+// Related publications
+.related-publications {
+  padding-top: var(--spacer-2);
+  padding-bottom: var(--spacer-2);
+  margin-bottom: var(--spacer-2);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.related-publications-list {
+  padding-left: 0;
+  list-style: none;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    small {
+      color: var(--gray-600);
+    }
+  }
+}
+
+.publication-tags-section {
+  display: block;
+  padding: var(--spacer) 0;
+  color: var(--gray-600);
+  font-family: var(--body-font);
+}
+
+.publication-tags-icon {
+  display: inline-block;
+  margin-right: var(--spacer);
+}
+
+.publication-tags {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    margin-right: var(--spacer);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--body-bg);
+        background-color: var(--link-hover-color);
+      }
+    }
+  }
+}
+
+.publication-tag {
+  padding: .1em .5em;
+  border: 1px solid var(--border-color);
+  border-radius: .5em;
+}
+
+.publication-author {
+  // Add styles for publication author
+}
