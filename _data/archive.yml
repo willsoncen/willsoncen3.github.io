@@ -2,8 +2,7 @@
 - type: home
   title: Home
   url: /home/
-  title: Dates
-  url: /dates/
+
 - type: dates
   title: Dates
   url: /dates/
