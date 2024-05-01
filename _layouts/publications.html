@@ -2,16 +2,20 @@
 layout: default
 ---
 
-<div class="publications">
-  <h1>我的出版物</h1>
-  
-  <ul>
-    {% for publication in sorted_publications %}
-      <li>
-        <h2><a href="{{ site.baseurl }}{{ publication.url }}">{{ publication.title | escape }}</a></h2>
-        <p>发表时间：{{ publication.date | date: "%Y-%m-%d" }}</p>
-        <p>{{ publication.content | strip_html | truncatewords: 50 }}</p>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+
+<article class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="publications">
+    <h1>我的出版物</h1>
+    
+    <ul>
+      {% for publication in sorted_publications %}
+        <li>
+          <h2><a href="{{ site.baseurl }}{{ publication.url }}">{{ publication.title | escape }}</a></h2>
+          <p>发表时间：{{ publication.date | date: "%Y-%m-%d" }}</p>
+          <p>{{ publication.content | strip_html | truncatewords: 50 }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</article>
