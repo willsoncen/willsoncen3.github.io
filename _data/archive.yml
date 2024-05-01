@@ -10,3 +10,7 @@
 - type: tags
   title: Tags
   url: /tags/
+
+- type: Publications
+  title: "Publications"
+  url: /publications/
