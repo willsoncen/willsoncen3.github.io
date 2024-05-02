@@ -63,14 +63,3 @@ collections:
     output: true
     permalink: /publications/:path/
 
-navigation:
-  - title: Home
-    url: /
-  - title: About
-    url: /about
-  - title: Publications
-    url: /publications
-  - title: Projects
-    url: /projects
-  - title: Contact
-    url: /contact
