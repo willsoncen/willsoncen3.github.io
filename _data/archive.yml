@@ -1,5 +1,5 @@
 - type: Home
-  title: Homne
+  title: Home
   url: /
 - type: dates
   title: Dates
@@ -10,3 +10,9 @@
 - type: tags
   title: Tags
   url: /tags/
+- type: publications
+  title: Publications
+  url: /publications/
+- type: profile
+  title: Profileq
+  url: /profile/
