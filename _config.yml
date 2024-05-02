@@ -63,4 +63,14 @@ collections:
     output: true
     permalink: /publications/:path/
 
-你好，我是岑云伟，欢迎来到我的博客。
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Publications
+    url: /publications
+  - title: Projects
+    url: /projects
+  - title: Contact
+    url: /contact
