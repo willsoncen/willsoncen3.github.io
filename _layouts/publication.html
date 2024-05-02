@@ -1,43 +1,36 @@
 ---
 layout: default
-title: Publications
-permalink: /publications/
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <!-- 在此处引入CSS和JavaScript文件 -->
-    {% include head.html %}
-</head>
-<body>
-    <header>
-        <h1>{{ page.title }}</h1>
-    </header>
+<div class="publications">
+  <h1 class="publications-title">Publications</h1>
 
-    <main>
-        <section class="publications">
-            <!-- 使用Liquid模板标签遍历您的publication数据 -->
-            {% for publication in site.data.publications %}
-            <article class="publication">
-                <h2 class="publication-title">{{ publication.title }}</h2>
-                <p class="publication-authors">
-                    {% for author in publication.authors %}
-                        {{ author }}{% unless forloop.last %}, {% endunless %}
-                    {% endfor %}
-                </p>
-                <p class="publication-year">{{ publication.year }}</p>
-                <p class="publication-venue">{{ publication.venue }}</p>
-                <a href="{{ publication.url }}" class="publication-link">Link</a>
-            </article>
-            {% endfor %}
-        </section>
-    </main>
-
-    <footer>
-        <!-- 页脚内容 -->
-    </footer>
-</body>
-</html>
+  {% for publication in site.publications %}
+  <div class="publication-item">
+    <h2 class="publication-title">{{ publication.title }}</h2>
+    <div class="publication-authors">
+      {% for author in publication.authors %}
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        {{ author.name }}
+      </span>
+      {% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="publication-meta">
+      <time datetime="{{ publication.date | date_to_xmlschema }}" itemprop="datePublished">{{ publication.date | date: "%B %d, %Y" }}</time>
+      {% if publication.journal %}
+      <span> | </span>
+      <span class="publication-journal">{{ publication.journal }}</span>
+      {% endif %}
+    </div>
+    <div class="publication-summary">
+      {{ publication.content | markdownify | strip_html | truncatewords: 50 }}
+    </div>
+    {% if publication.link %}
+    <div class="publication-link">
+      <a href="{{ publication.link }}">[Link]</a>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
