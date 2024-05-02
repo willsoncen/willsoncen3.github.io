@@ -29,14 +29,14 @@ exclude:
 
 # Optimize Jekyl SEO Tag
 twitter:
-  username: vszhub
+  username: willsoncem
   card: summary
 logo: logo.png
 social:
-  name: Songzi Vong
+  name: willsoncen
   links:
-    - https://twitter.com/vszhub
-    - https://github.com/vszhub
+    - https://twitter.com/wilsoncen
+    - https://github.com/wilsoncen
 google_site_verification: xxxxx
 lang: en
 
@@ -54,6 +54,6 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Songzi Vong
-  url: https://github.com/vszhub/
-  email: vszhub@gmail.com
+  name: willsoncen
+  url: https://github.com/willsoncen/
+  email: willsoncen@outlook.com

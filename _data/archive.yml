@@ -1,3 +1,6 @@
+- type: Home
+  title: Homne
+  url: /
 - type: dates
   title: Dates
   url: /dates/
