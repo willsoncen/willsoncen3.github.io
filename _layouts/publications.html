@@ -1,53 +1,35 @@
 ---
 layout: default
+title: Publications
+permalink: /publications/
 ---
 
-<article class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <div class="post-meta">
-    {%- assign date_format = site.date_format | default: "%-d %b %Y" -%}
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
-    {%- if page.last_modified_at -%}
-      <span> ~ </span>
-      {%- assign mdate = page.last_modified_at | date_to_xmlschema -%}
-      <time datetime="{{ mdate }}" itemprop="dateModified">
-        {{ mdate | date: date_format }}
-      </time>
-    {%- endif -%}
-    {%- if page.author -%}
-      <span> • </span>
-      {% for author in page.author %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          {{ author }}
-        </span>
-        {%- if forloop.last == false %}, {% endif -%}
-      {% endfor %}
-    {%- endif -%}
-  </div>
+<h1 class="page-title">Publications</h1>
 
-  {{ content }}
+<div class="publications">
+  {%- for publication in site.publications %}
+    <div class="publication">
+      <h2 class="publication-title">
+        <a href="{{ publication.url | relative_url }}">{{ publication.title }}</a>
+      </h2>
+      <p class="publication-authors">
+        {%- for author in publication.authors %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            {{ author.name }}
+          </span>
+          {%- unless forloop.last %}, {% endunless %}
+        {%- endfor %}
+      </p>
+      <p class="publication-date">
+        <time datetime="{{ publication.date | date_to_xmlschema }}" itemprop="datePublished">{{ publication.date | date: "%B %Y" }}</time>
+      </p>
+      <div class="publication-content">
+        {{ publication.content | markdownify }}
+      </div>
+    </div>
+  {%- endfor %}
+</div>
 
-  {% if page.tags %}
-    {% include post-tags.html %}
-  {% endif %}
-
-  {% if jekyll.environment == "production" and site.disqus and page.comments != false %}
-    {% include disqus.html %}
-  {% endif %}
-</article>
-
-{% if site.related_posts != empty %}
-<aside class="related">
-  <h2>Related posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-          <small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-</aside>
-{% endif %}
+{%- if jekyll.environment == "production" and site.disqus and page.comments != false %}
+  {% include disqus.html %}
+{%- endif %}
