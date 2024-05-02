@@ -2,13 +2,13 @@
   title: Home
   url: /
 - type: dates
-  title: Dates
+  title: Blog|Dates
   url: /dates/
 #- type: categories
 #  title: Categories
 #  url: /categories/
 - type: tags
-  title: Tags
+  title: Blog|Tags
   url: /tags/
 - type: publications
   title: Publications
